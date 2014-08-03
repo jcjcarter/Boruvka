@@ -1,0 +1,9 @@
+1. No, a deadlock is not possible. The first philosopher will have the ability
+   to grab the right fork since the fifth philosopher did not pick it up.
+   Once the first philosopher finishes, he will put down both forks giving the
+   second philosopher a chance to do his tasks. And so on with the third,
+   fourth, and fifth philosopher. 
+
+2. No, a livelock is not possible. Beccause the first philosopher will be doing
+   his tasks. Once the first philosopher finishes, the other philosophers will
+   be able to go 

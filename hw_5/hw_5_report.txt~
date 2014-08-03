@@ -1,0 +1,21 @@
+8 Threads
+.25 seconds
+
+4 Threads
+.31 Seconds
+
+2 Threads
+.39 Seconds
+ 
+1 Threads
+.55 Seconds
+
+Sequential Version
+
+.51 Seconds
+
+Under the Boruvka java file, in the function Main there I initialize an array of threads
+that carry out the computations in the given sequence version. To avoid data races between
+the threads, I try-lock the Component declared in the while condition. If the try-lock
+fails then a continued is called. For the variable Component call "other" I place a try-lock on it
+and if the try-lock fails then I unlock the variable Component declared in the while condition.

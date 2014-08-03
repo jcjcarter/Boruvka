@@ -1,0 +1,25 @@
+#PBS -l nodes=1:ppn=8,pmem=1250m,walltime=00:80:00
+#PBS -V
+NUM_THREADS=8
+
+# Update definition of PATH_TO_SOURCES if you want to use another directory
+PATH_TO_SOURCES=~/hw_5
+
+PATH_TO_INPUT=$PATH_TO_SOURCES/USA-road-d.NY.gr.gz
+
+cd $PATH_TO_SOURCES
+echo "Path set to:"
+echo $PATH_TO_SOURCES
+
+rm -f *.class
+
+source /users/COMP322/hjLibSetup.txt
+
+echo "Compiling..."
+javac *.java
+
+echo "Running..."
+
+java -server -Xmx10g Boruvka $PATH_TO_INPUT $NUM_THREADS
+
+echo "The End."
